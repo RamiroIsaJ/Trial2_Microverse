@@ -9,8 +9,9 @@
     <meta name="keywords" content="DOM, BOM, javascript, html">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/35e1f586d0.js" crossorigin="anonymous"></script>
-    <title>Personal Portafolio </title>
+    <title>Projects </title>
 </head>
 <body>
     <header id="header">
@@ -27,13 +28,10 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-1 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                    <a class="nav-link" aria-current="page" href="../index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/pages/products.html" target="_blank">Projects</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/pages/prices.html" target="_blank">About me</a>
+                    <a class="nav-link active" href="/pages/products.html" target="_blank">Projects</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/pages/contact.html" target="_blank">Contact</a>
@@ -45,63 +43,54 @@
 
     </header>
     
-    <main>
-        <h1 class="my-4 text-primary text-center">Welcome</h1>
+    <main class="container">
+        <h1 class="my-4 text-primary text-center">Projects</h1>
         <hr>
-        <section id="video" class="text-center">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/eGUEAvNpz48" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </section>
-        <section class="row contenedor">
-            <div class="col-sm-12 col-md-5 my-3 d-flex justify-content-center">
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="display-5 text-center my-3 text-primary">Information</h3>
-                </div>
-                <div class="card-body">
-                  <p class="card-text">
-                  <h5> <span><i class="fas fa-envelope"></i></span> Email: land@gmail.com</h5>
-                  <h5> <span><i class="fab fa-whatsapp"></i></span> Whatsapp: +593 9855 41 895</h5>
-                  <br />
-                  <iframe class="my-3"
-                    src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d997.0285811449191!2d-78.66362634553128!3d-1.6745988300651031!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sec!4v1634838547998!5m2!1ses!2sec"
-                    width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-12 col-md-7 my-3 d-flex justify-content-center">
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="display-5 text-center my-3 text-primary">English courses</h3>
-                  </div>
-                  <div class="card-body">
-                    <div class="text-center">
-                      <img src="/img/land.png" alt="information, landing" style="width: 100%" />
-                    </div>
-                    <p class="card-text my-4 parraf"> Hi, friends! I want to share with you the design of the landing page for English courses. Thanks for an amazing illustration. I'm looking forward to your comments.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <section class="row">
-                <div class="col-sm-12 d-flex justify-content-center">
-                  <div class="card">
-                    <div class="card-header">
-                      <h4 class="text-center my-3 text-primary">Team</h4>
-                    </div>
-                      <div class="card-body">
-                        <div class="text-center">
-                          <img src="/img/team.jpg" alt="team, page, landing" style="width: 30%" />
-                        </div>
-                        <div class="text-center my-3">
-                          <p class="card-text">Ismail Ibrahim</p>
-                          <p class="card-text">Ramiro Isa Jara</p>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-                </section>
+        <div class="row">
+          <section class="d-flex justify-content-end">
+            <button id="newPro" type="button" class="btn btn-primary">+ New</button>
           </section>
+        </div>
+
+        <div id="panel1" class="content2 my-5 d-none">
+          <h3 class="my-4 text-primary text-center">Register new project:</h3>
+          <section class="my-4 bg-light p-3 borderF">
+            <form id="formProject">
+              <div class="mb-3">
+                <label for="title" class="form-label textForm"> Title of Project:</label>
+                <input type="text" class="form-control" id="title" maxlength="50" placeholder="Some title" required>
+                <div class="invalid-feedback">Required</div>
+              </div>
+              <div class="mb-3">
+                <label for="image" class="form-label textForm">URL image:</label>
+                <input type="text" class="form-control" id="image" maxlength="80" placeholder="Url of image" required>
+                <div class="invalid-feedback">Required</div>
+              </div>
+              <div class="mb-3">
+                <label for="description" class="form-label textForm">Description:</label>
+                <input type="text" class="form-control" id="description" maxlength="200" placeholder="Some description" required>
+                <div class="invalid-feedback">Required</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="link" class="form-label textForm">Link: </label>
+                <input type="text" class="form-control" id="link" maxlength="80" placeholder="Url of project" required>
+                <div class="invalid-feedback">Required</div>
+              </div>
+              
+              <button class="btn btn-primary" type="submit">Submit</button>
+              <button class="btn btn-danger" type="button" id="clear">Cancel</button>
+              </div>
+
+            </form>
+          </section>
+
+        </div>
+        
+        <div id="panel2" class="text-center my-5">
+          <section id="gridP" class="row my-5">
+          </section>
+        </div>
             
     </main>
 
@@ -123,10 +112,10 @@
                 <a class="text-left text-foot text-light" href="/pages/contact.html">Contact</a>
               </div>
               <div>
-                <a class="text-left text-foot text-light" href="/pages/products.html">Projects</a>
+                <a class="text-left text-foot text-light" href="/pages/projects.html">Projects</a>
               </div>
               <div>
-                <a class="text-left text-foot text-light" href="/pages/prices.html">Research</a>
+                <a class="text-left text-foot text-light" href="/pages/error.html">Research</a>
               </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-3">
@@ -145,5 +134,7 @@
         </section>
         <p id="finalText" class="mt-3"> &copy;  All rigths reserve </p>
     </footer>
+    <script src="../js/bootstrap.min.js"></script>
+    <script type="module" src="../js/project.js"></script>
 </body>
 </html>

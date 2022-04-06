@@ -6,12 +6,25 @@
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
+.text-p{
+    font-family: 'Lobster', sans-serif;
+}
 #finalText{
     text-align: center;
 }
 
 .rob1{
     border-radius: 5%;
+}
+
+.borderF{
+    border: 1px solid rgb(196, 194, 194);
+}
+
+.content2{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 @media (max-width: 576px){
@@ -30,4 +43,14 @@
         width: 300px;
     }
 
+    .map{
+        width: 250px;
+    }
+
+}
+
+@media (max-width: 992px){
+    .map{
+        width: 250px;
+    }
 }
