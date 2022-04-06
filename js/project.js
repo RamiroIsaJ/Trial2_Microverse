@@ -15,7 +15,7 @@ let projectList = [];
 title.addEventListener('blur', () => {confirmRequired(title)});
 image.addEventListener('blur', () => {confirmURL(image)});
 description.addEventListener('blur', () => {confirmRequired(description)});
-link.addEventListener('blur', () => {confirmRequired(link)});
+link.addEventListener('blur', () => {confirmURL(link)});
 newPro.addEventListener('click', () => {openForm()});
 cancel.addEventListener('click', () => {closeForm()});
 form.addEventListener('submit', saveProject);
@@ -51,7 +51,10 @@ const initList = () =>{
 
 function saveProject(e){
     e.preventDefault();
-    saveNewProject();
+    if(confirmRequired(title) && confirmRequired(description) && confirmURL(image) && confirmURL(link)){
+        saveNewProject();
+    }
+    
 }
 
 function saveNewProject(){

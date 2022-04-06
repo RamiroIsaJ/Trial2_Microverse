@@ -9,6 +9,7 @@
     <meta name="keywords" content="DOM, BOM, javascript, html">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/35e1f586d0.js" crossorigin="anonymous"></script>
     <title>Contact</title>
 </head>
@@ -47,14 +48,15 @@
                 <h2 class="text-primary mt-5"> Contact with me </h2>
                 <hr>
             </div>
+            <form id="contact">
               <div class="content2 mt-3">
                 <div class="mb-3">
                   <span><i class="fas fa-user fa-2x"></i></span>
-                  <label for="nombre" class="form-label fs-2 text"> Full name: </label>
+                  <label for="name" class="form-label fs-2 text"> Full name: </label>
                   <input
                     type="text"
                     class="form-control"
-                    id="nombre"
+                    id="name"
                     placeholder="Juan Manuel"
                     required
                     maxlength="50"
@@ -63,7 +65,7 @@
        
                 <div class="mb-3">
                   <span><i class="fas fa-envelope fa-2x"></i></span>
-                  <label for="correo" class="form-label fs-2 text">Email:</label>
+                  <label for="email" class="form-label fs-2 text">Email:</label>
                   <input
                     type="email"
                     class="form-control"
@@ -73,10 +75,10 @@
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="telefono" class="form-label fs-2 text" >
+                  <label for="cell" class="form-label fs-2 text" >
                   <span><i class="fas fa-phone-alt"></i></span>Number of cellphone:</label>
                   <input
-                    type="tel"
+                    type="text"
                     class="form-control"
                     id="cell"
                     placeholder="+54 11 381-1234567"
@@ -85,19 +87,20 @@
                 </div>
                 <div class="mb-3">
                   <label
-                    for="exampleFormControlTextarea1"
+                    for="message"
                     class="form-label fs-2 text">Message:</label>
                   <textarea
                     class="form-control"
-                    id="exampleFormControlTextarea1"
+                    id="message"
                     rows="3"></textarea>
                 </div>
                 <div class="d-grid gap-2">
-                <button type="submit" class="btn btn-primary mb-3" id="enviar">
+                <button type="submit" class="btn btn-primary mb-3" id="submit">
                   Submit
                 </button>
               </div>
               </div>
+            </form>
             </div>
             <hr>
           </div>
@@ -143,5 +146,7 @@
       </section>
       <p id="finalText" class="mt-3"> &copy;  All rigths reserve </p>
   </footer>
+  <script src="../js/bootstrap.min.js"></script>
+  <script type="module" src="../js/contact.js"></script>
 </body>
 </html>
