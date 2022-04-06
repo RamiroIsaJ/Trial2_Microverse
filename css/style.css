@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap');
+
+
+.textIni{
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+#finalText{
+    text-align: center;
+}
+
+.rob1{
+    border-radius: 5%;
+}
+
+@media (max-width: 576px){
+    .contenedor{
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    iframe {
+        width: 260px;
+        height: 300px;
+    }
+
+    .rob1{
+        width: 300px;
+    }
+
+}
