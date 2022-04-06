@@ -41,6 +41,12 @@ function closeForm(){
 
 const initList = () =>{
     projectList = JSON.parse(localStorage.getItem('projectListT')) || [];
+    console.log(projectList.length)
+    if (projectList.length > 0){
+        projectList.forEach(itemProject => {
+            createGrid(itemProject);           
+        });
+    }
 }
 
 function saveProject(e){
@@ -73,3 +79,25 @@ function saveNewProject(){
         });
     }
 }
+
+function createGrid(project) {
+    let grid = document.getElementById('gridP');
+    grid.innerHTML += `
+    <div class="col-sm-12 col-md-4 col-lg-3 mb-3 ">
+        <div class="card">
+            <img src="${project.image}" class="card-img-top" alt="${project.title}" width="200" height="200">
+            <div class="card-header">
+                ${project.title}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Description:</h5>
+                <p class="card-text">${project.description}</p>
+                <h5 class="card-title">URL link:</h5>
+                <p class="card-text"> ${project.link}</p>
+                <p class="card-text"> <a href="${project.link}">Open GitHub</a></p>
+            </div>
+        </div>
+    </div>`;
+}
+
+initList();
